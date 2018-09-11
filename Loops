@@ -1,0 +1,35 @@
+public class ArrayReturn {
+    public static void main(String [] args){
+      int a = indexOffFirstOcc(new String[]{"Mick", "Heinrich", "Pipo", "Mambo"}, "Pipo");
+       System.out.print(a);
+}
+
+//Loop1 Always Returns -1
+    public static int indexOffFirstOcc (String[] stringArray, String target){
+
+        int stringLenght=stringArray.length;
+        int result=0;
+        for (int i=0; i<stringLenght;i++){
+            if (stringArray[i].equals(target)){
+               result = i;
+            }
+            else 
+            {
+                result=-1;
+            }
+        }
+        return result;
+
+    }
+
+//Loop2 returns correct target
+    public static int indexOffFirstOcc2 (String[] stringArray, String target){
+
+        for (int i = 0; i < stringArray.length; i++) {
+            if (stringArray[i].equals(target)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+}
